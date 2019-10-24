@@ -12,9 +12,9 @@ You need the following software to be installed on your machine:
 - Node.js (https://nodejs.org, version 12 recommended)
 - Yarn Package Manager (https://yarnpkg.com/lang/en/docs/install, version 1.16.0 recommended)
 
-Furthermore you need the Eclipse N4JS IDE for executing the migrations. Nightly builds of the IDE can be found here:
+Furthermore you need the Eclipse N4JS IDE for executing the migrations. We tested the tooling with the following version:
 
-- [https://projects.eclipse.org/projects/technology.n4js/downloads](https://projects.eclipse.org/projects/technology.n4js/downloads)
+- [https://archive.eclipse.org/n4js/products/nightly/201907162301/](https://archive.eclipse.org/n4js/products/nightly/201907162301/)
 
 Download the IDE for your OS, extract the archive and run the IDE.
 
