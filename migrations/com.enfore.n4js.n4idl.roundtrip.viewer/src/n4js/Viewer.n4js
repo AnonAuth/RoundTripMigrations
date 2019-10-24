@@ -41,7 +41,7 @@ const layoutOptions = {
 	setLabels: true
 };
 
-var traceLinks : [Link] = [];
+var traceLinks : Array<Link> = [];
 var showTraces = true;
 
 /**
@@ -207,7 +207,7 @@ export public class Viewer {
 	 * adds them to this {@link Viewer}.
 	 */
 	initialiseObjectGraph(instances : [SerializedInstance])
-		: ~Object with {classes: [InstanceShape], relations: [UMLComposition]} {
+		: ~Object with {classes: Array<InstanceShape>, relations: Array<UMLComposition>} {
 		var classes = new Array<InstanceShape>();
 		var relations = new Array<UMLComposition>();
 	
@@ -257,7 +257,7 @@ export public class Viewer {
 	 * Resizes the given list of {@link InstanceShape}s to 
 	 * fit their contents size.
 	 */
-	private fitInstances(instances : [InstanceShape]) : void {
+	private fitInstances(instances : Array<InstanceShape>) : void {
 		instances.forEach(c => {
 			let actualSize = c.findView(this.paper).getBBox({useModelGeometry: false})
 			actualSize.width = computeInstanceWidth(c);
@@ -402,7 +402,7 @@ function stringWidth(s : string) : number {
  * given {@link InstanceShape} (includes attributes and name).
  */
 function computeInstanceWidth(instance : InstanceShape) : number {
-	const attributes = instance.get("attributes") as [string];
+	const attributes = instance.get("attributes") as Array<string>;
 	const attributeWidth = 
 			Math.max.apply(null, attributes.map((a : string) : number => stringWidth(a))) as int || 0;
 	// if class name is the longest string, use it as width

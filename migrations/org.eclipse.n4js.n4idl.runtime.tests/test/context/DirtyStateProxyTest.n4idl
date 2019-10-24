@@ -24,7 +24,7 @@ export public class A {
 
 @VersionAware
 export public class B {
-	a : [A] = [];
+	a : Array<A> = [];
 }
 
 /**

@@ -45,7 +45,7 @@ export public class MigrationResolver implements MigrationProvider {
 	 * to the given target version. 
 	 */
 	@Override
-	public getMigration(args : [?]) : Function? {
+	public getMigration(args : Array<?>) : Function? {
 		const candidates = Iterables.wrap(this.findAllMigrations(args));
 		
 		if (candidates.empty) {
@@ -70,7 +70,7 @@ export public class MigrationResolver implements MigrationProvider {
 			}
 		}
 		
-		const matches : [MigrationCandidate] = matcher.allMatches;
+		const matches : Array<MigrationCandidate> = matcher.allMatches;
 		
 		// if there is more than one match
 		if (matches.length > 1) {
@@ -87,7 +87,7 @@ export public class MigrationResolver implements MigrationProvider {
 	/**
 	 * Returns all applicable migration candidates for the given migration arguments.
 	 */
-	public findAllMigrations(args : [?]) : Iterable<MigrationCandidate> {
+	public findAllMigrations(args : Array<?>) : Iterable<MigrationCandidate> {
 		const migratable = MigrationUtils.findFirstMigratable(args);
 		
 		// If no migratable argument can be extracted, 

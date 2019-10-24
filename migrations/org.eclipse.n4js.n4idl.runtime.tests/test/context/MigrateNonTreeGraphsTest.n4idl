@@ -86,8 +86,8 @@ export public class MigrateNonTreeGraphsTest {
 		
 		const reverseContext = MigrationContextImpl.newContext(controller);
 		
-		const traceA = reverseContext.getTrace(c2.m1) as [[Object]];
-		const traceB = reverseContext.getTrace(c2.m2) as [[Object]];;
+		const traceA = reverseContext.getTrace(c2.m1) as Array<Array<Object>>;
+		const traceB = reverseContext.getTrace(c2.m2) as Array<Array<Object>>;;
 		
 		Assert.equal(traceA.length, 2, "c2.m1 has two trace links.");
 		Assert.equal(traceB.length, 2, "c2.m2 has two trace links.");

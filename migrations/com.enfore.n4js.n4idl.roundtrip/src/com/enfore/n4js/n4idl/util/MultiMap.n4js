@@ -16,14 +16,14 @@
  * The values of the map are considered to be sets.
  */
 export public class MultiMap<KeyT, ValueT> {
-	private internalMap : Map<KeyT, [ValueT]> = new Map<KeyT, [ValueT]>();
+	private internalMap : Map<KeyT, Array<ValueT>> = new Map<KeyT, Array<ValueT>>();
 	
 	/**
 	 * Returns the set of values associated with
 	 * the given key or {@code undefined} if nothing
 	 * has been associated with the given key.
 	 */
-	public get(key: KeyT) : [ValueT] {
+	public get(key: KeyT) : Array<ValueT> {
 		return this.internalMap.get(key);
 	}
 	
@@ -37,7 +37,7 @@ export public class MultiMap<KeyT, ValueT> {
 		let existing = this.get(key) || [];
 		
 		if (Array.isArray(value)) {
-			(value as [ValueT]).forEach(v => {
+			(value as Array<ValueT>).forEach(v => {
 				if (existing.indexOf(v) == -1) {
 					existing.push(v)
 				}

@@ -176,12 +176,12 @@ export public class DirtyStateProxy<T extends Object> {
 		}
 	}
 	
-	private static getEnumerableFields(object : Object) : [Object|Array<?>] {
+	private static getEnumerableFields(object : Object) : Array<Object|Array<?>> {
 		// traverse all enumerable object properties
 		return Object.keys(object) // obtain object-keys
 			.map(k => object[k]) // obtain corresponding values
 			// filter for enumerable-values
-			.filter(v => typeof v === 'object' || typeof v === 'array' ) as [Object|Array<?>] 
+			.filter(v => typeof v === 'object' || typeof v === 'array' ) as Array<Object|Array<?>> 
 	}
 	
 	/** Set of fields of the proxied object that are considered dirts (changed since the last snapshot). */

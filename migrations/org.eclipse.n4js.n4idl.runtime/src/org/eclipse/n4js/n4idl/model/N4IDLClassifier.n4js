@@ -49,8 +49,8 @@ export public class N4IDLClassifier<ClassifierT extends Object> extends N4IDLMig
 	/**
 	 * All (directly) implemented interfaces of this classifier.
 	 */
-	public get implementedInterfaces() : [type{? extends Object}] {
+	public get implementedInterfaces() : Array<type{? extends Object}> {
 		return N4TypeUtils.dynamic(this.wrappedType)[N4IDLClassifier.IMPLEMENTED_INTERFACES_STATIC_FIELD]
-			as [type{? extends Object}];
+			as Array<type{? extends Object}>;
 	}
 }

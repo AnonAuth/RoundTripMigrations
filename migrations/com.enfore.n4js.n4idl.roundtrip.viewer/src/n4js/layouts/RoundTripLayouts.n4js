@@ -12,7 +12,7 @@ import {Element} from "jointjs";
 
 /** A layout for a round-trip {@link Viewer}. */
 export public interface ViewerLayout {
-	layout(elements : [? extends Element]);
+	layout(elements : Array<? extends Element>);
 }
 
 /**
@@ -38,7 +38,7 @@ export public class RoundTripWithoutModificationLayout extends RoundTripLayout {
 	}
 	
 	@Override
-	public layout(elements : [? extends Element]) {
+	public layout(elements : Array<? extends Element>) {
 		super.layout(elements);
 	}
 }
@@ -69,7 +69,7 @@ export public class RoundTripStackLayout extends RoundTripLayout {
 	
 	
 	@Override
-	public layout(elements : [? extends Element]) {
+	public layout(elements : Array<? extends Element>) {
 		super.layout(elements);
 	}
 }
@@ -84,7 +84,7 @@ class ~RoundTripLayoutSlot {
 class ~RoundTripLayoutOptions {
 	public horizontalSpacing? : int = 100
 	public verticalSpacing? : int = 100
-	public slots? : [~RoundTripLayoutSlot] = []
+	public slots? : Array<~RoundTripLayoutSlot> = []
 	
 	/**
 	 * Overrides the given options with the given
@@ -124,7 +124,7 @@ export public class RoundTripLayout implements ViewerLayout {
 		}, options) as ~RoundTripLayoutOptions;
 	}
 	@Override
-	public layout(elements : [? extends Element]) {
+	public layout(elements : Array<? extends Element>) {
 		let maxWidth = elements.<number, Object>map(s => s.size().width)
 			.reduce((a : number,b : number) => Math.max(a,b));
 		let maxHeight = elements.<number, Object>map(s => s.size().height)

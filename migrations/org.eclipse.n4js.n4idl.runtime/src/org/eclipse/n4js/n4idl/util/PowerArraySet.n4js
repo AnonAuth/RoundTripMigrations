@@ -27,19 +27,19 @@ export public class PowerArraySet<ValueT> {
 	private internalMap = new SetMap<ValueT, Object>();
 	
 	/** Adds the given array to this set. */
-	public add(values : [ValueT]) {
+	public add(values : Array<ValueT>) {
 		this.internalMap.set(values, values);
 	}
 	
 	/** Returns {@code true} iff this set contains an array
 	 * which holds the same elements as {@code values}*/
-	public has(values : [ValueT]) {
+	public has(values : Array<ValueT>) {
 		return this.internalMap.has(values);
 	}
 	
 	/** Removes the array from this set, which holds the same
 	 * elements as {@code values}. */
-	public remove(values : [ValueT]){
+	public remove(values : Array<ValueT>){
 		if (values == null) { return; } // do nothing on null
 		this.internalMap.set(values, null);
 	}

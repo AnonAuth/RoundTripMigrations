@@ -41,7 +41,7 @@ export external public class Observable {
 
 export external public class Graph extends Observable {
 	public getBBox() : BoundingBox
-	public getCells() : [Cell]
+	public getCells() : Array<Cell>
 	
 	public getCell(id : string) : Cell?
 	
@@ -83,7 +83,7 @@ export external public class Cell extends Observable {
 	public setEmbeddedPosition(x : int, y : int) : void
 	
 	public embed(element : Cell);
-	public getEmbeddedCells() : [Cell];
+	public getEmbeddedCells() : Array<Cell>;
 	public toBack();
 	
 	public attr(objectOrKey: union{string, Object}, value : string = undefined);

@@ -20,5 +20,5 @@ export public interface MigrationProvider {
 	 * In case this handlers does not provide any migration for the given list of arguments, this
 	 * method returns {@code null}.
 	 */
-	public getMigration(args : [?]) : Function?
+	public getMigration(args : Array<?>) : Function?
 }

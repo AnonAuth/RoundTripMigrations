@@ -38,7 +38,7 @@ export public class MigrationConflictTest {
 	@Test
 	public testAllMigrations() {
 		const targetVersion = 2;
-		const args : [any] = [new B#1(), new OB#1()];
+		const args : Array<any> = [new B#1(), new OB#1()];
 		
 		const allMigrations_B_OB = findAllMigrations(targetVersion, args);
 		
@@ -65,7 +65,7 @@ export public class MigrationConflictTest {
 	@Test
 	public testMigrationConflictPrimitives() {
 		const targetVersion = 2;
-		const args : [any] = [new B#1(), 1];
+		const args : Array<any> = [new B#1(), 1];
 		
 		// assert that only mPrimitiveInt is deemed a compatible migration for args
 		const allMigrations_B_OB = findAllMigrations(targetVersion, args);

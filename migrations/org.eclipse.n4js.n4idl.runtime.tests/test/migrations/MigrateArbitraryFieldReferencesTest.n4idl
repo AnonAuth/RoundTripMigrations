@@ -71,9 +71,9 @@ export public class NodeStructuralRoundTrip extends FunctionContextRoundTripTest
 
 export public class SubNode#1 {
 	public id : int
-	public successors : [SubNode]
+	public successors : Array<SubNode>
 	
-	public constructor(id : int, successors : [SubNode]=) {
+	public constructor(id : int, successors : Array<SubNode>=) {
 		this.successors = successors || [];
 		this.id = id;
 	}

@@ -78,7 +78,7 @@ export public class MigrationMatcher {
 	 * 
 	 * All returned candidates can be assumed to be of the same {@link #distance}.
 	 */
-	public get allMatches() : [MigrationCandidate] {
+	public get allMatches() : Array<MigrationCandidate> {
 		return Array.from(this.matches.values());
 	}
 	

@@ -28,7 +28,7 @@ export public class MigrationDistanceComputer {
 	 * Computes the distance of the given migration candidate to the given 
 	 * set of migration argument types.
 	 */
-	public compute(argumentTypes : [MigrationArgumentTypeDescription], migration : MigrationCandidate) : number {
+	public compute(argumentTypes : Array<MigrationArgumentTypeDescription>, migration : MigrationCandidate) : number {
 		const parameterTypes = migration.parameterTypes;
 		
 		if (parameterTypes.length != argumentTypes.length) {
@@ -45,7 +45,7 @@ export public class MigrationDistanceComputer {
 	}
 	
 	/** Simple norm for a type distance vector (sum). */
-	private norm(distanceVector : [number]) : number {
+	private norm(distanceVector : Array<number>) : number {
 		return distanceVector.reduce((a : number, b : number) => a + b);
 	}
 	
@@ -78,14 +78,14 @@ export public class MigrationDistanceComputer {
 		
 	}
 	
-	public computeMigrationArgumentTypes(migration : MigrationCandidate) : [MigrationArgumentTypeDescription] {
+	public computeMigrationArgumentTypes(migration : MigrationCandidate) : Array<MigrationArgumentTypeDescription> {
 		return migration.parameterTypes.map(p => MigrationArgumentTypeDescription.fromMeta(p));
 	}
 	
 	/** 
 	 * Returns an array of {@link MigrationArgumentType} which describe the
 	 * types of the given list of migration arguments.*/
-	public computeArgumentTypes(args : [?]) : [MigrationArgumentTypeDescription] {
+	public computeArgumentTypes(args : Array<?>) : Array<MigrationArgumentTypeDescription> {
 		return args.map(a => MigrationArgumentTypeDescription.fromValue(a));
 	}
 }

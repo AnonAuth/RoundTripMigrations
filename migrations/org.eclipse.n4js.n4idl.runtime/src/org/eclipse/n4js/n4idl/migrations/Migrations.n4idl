@@ -32,7 +32,7 @@ export public function <FromT extends Object, ToT extends ~FromT&Object> copy(ct
  * if the array has no element for the given {@code index}.
  */
 @Migration
-export public function <SourceT, TargetT> migrateElementAt(array : [SourceT], index : number, defaultValue : TargetT=) : TargetT {
+export public function <SourceT, TargetT> migrateElementAt(array : Array<SourceT>, index : number, defaultValue : TargetT=) : TargetT {
 	if (array.length > index) {
 		const sourceElement = array[index];
 		if (sourceElement) {
@@ -50,11 +50,11 @@ export public function <SourceT, TargetT> migrateElementAt(array : [SourceT], in
  */
 @VersionAware
 @This(MigrationController)
-export public function <SourceT, TargetT> migrateArray(array : [SourceT]) : [TargetT] {
+export public function <SourceT, TargetT> migrateArray(array : Array<SourceT>) : Array<TargetT> {
 	if (array.length == 0) {
 		return [];
 	} else {
-		const result : [TargetT] = []
+		const result : Array<TargetT> = []
 		for (let e of array) {
 			result.push(this.migrate([e]));
 		}
@@ -71,7 +71,7 @@ export public function <SourceT, TargetT> migrateArray(array : [SourceT]) : [Tar
 @VersionAware
 @This(MigrationController)
 export public function <SourceT, TargetT> migrateIterable(iterable : Iterable<SourceT>) : Iterable<TargetT> {
-	const result : [TargetT] = [];
+	const result : Array<TargetT> = [];
 	for (let e of iterable) {
 		result.push(this.migrate([e]) as TargetT);
 	}

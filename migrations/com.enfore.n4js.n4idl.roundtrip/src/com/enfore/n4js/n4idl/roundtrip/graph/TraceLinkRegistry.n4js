@@ -73,9 +73,9 @@ export public class TraceLinkRegistry {
 	 * Use this value when serialising this registry.
 	 */
 	get rawData() : Array<Iterable2<string, string>> {
-		let pairs : [[Iterable2<string, string>]] = Array.from(this.linkMap.entries()).map(entry => {
+		let pairs : Array<Array<Iterable2<string, string>>> = Array.from(this.linkMap.entries()).map(entry => {
 			const [from, to] = entry;
-			const pairs : Array<Iterable2<string, string>> = to.map(t => [from, t]);
+			const pairs : Array<Iterable2<string, string>> = Array.from(to).map(t => [from, t]);
 
 			return pairs;
 		});

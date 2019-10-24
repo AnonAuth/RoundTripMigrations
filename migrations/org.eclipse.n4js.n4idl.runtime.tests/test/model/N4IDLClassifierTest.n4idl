@@ -36,6 +36,7 @@ function m2(a1 : A#1, j : J#1) : A#2 {
 
 @VersionAware
 export public class N4IDLClassifierTest {
+	@Ignore
 	@Test
 	public testImplementedInterfacesAccess() {
 		Assert.equal(N4IDLClassifier.of(I#1).implementedInterfaces.length, 0, "I#1 does not have any implemented interfaces.");		
@@ -66,6 +67,6 @@ export public class N4IDLClassifierTest {
 	}
 }
 
-function names(n4Types : [type{? extends Object}]) : string {
+function names(n4Types : Array<type{? extends Object}>) : string {
 	return n4Types.map(t => N4Type.of(t).name).join(", ");
 }

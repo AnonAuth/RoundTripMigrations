@@ -24,9 +24,9 @@ export public class DistanceProband {
 	 * Convenience static factory method for {@link DistanceProband} instances.
 	 */
 	public static new(
-		parameterTypes : [type{N4Object}] | Array<type{N4Object} | TypeTypeRef<Object> | string>,
+		parameterTypes : Array<type{N4Object}> | Array<type{N4Object} | TypeTypeRef<Object> | string>,
 		distance : number,
-		args : [any] = []
+		args : Array<any> = []
 	) : DistanceProband {
 		const c = new DistanceProband();
 		c.arguments = args;
@@ -42,13 +42,13 @@ export public class DistanceProband {
 		return c1.distance - c2.distance;
 	}
 	
-	public arguments : [any] 
-	public parameterTypes : [type{N4Object}] | Array<type{N4Object} | TypeTypeRef<Object> | string>
+	public arguments : Array<any> 
+	public parameterTypes : Array<type{N4Object}> | Array<type{N4Object} | TypeTypeRef<Object> | string>
 	public distance : number
 	
 	@Override
 	public toString() : string {
-		return `${N4TypeUtils.typesToString(this.arguments)} -> ${N4TypeUtils.typesToString(this.parameterTypes as [any])} (d=${this.distance})` 
+		return `${N4TypeUtils.typesToString(this.arguments)} -> ${N4TypeUtils.typesToString(this.parameterTypes as Array<any>)} (d=${this.distance})` 
 	}
 }
 
@@ -56,7 +56,7 @@ export public class DistanceProband {
  * Returns all combinations that can be formed by choosing one element from 
  * each of the given element {@code sets}.
  */
-export public function <T> combinations(sets : [[T]]) : [[T]] {
+export public function <T> combinations(sets : Array<Array<T>>) : [[T]] {
 	if (sets.length == 1) {
 		return sets[0].map(e => [e]);
 	} else {
@@ -64,7 +64,7 @@ export public function <T> combinations(sets : [[T]]) : [[T]] {
 		// recursively generate combinations that can be formed by the remaining sets (minus first)
 		const remainingCombinations = combinations(sets);
 		// for each remaining combinations, create new combination with each of the current set elements
-		const newCombinations : [[[T]]]= remainingCombinations
+		const newCombinations : [[[T]]]= Array.from(remainingCombinations)
 			.map(comb => first.map(e => Iterables.wrap([e]).concat([comb]).toArray()))
 		return Iterables.wrap(Iterables.concat(newCombinations)).toArray();
 	}
@@ -77,13 +77,13 @@ export public function <T> combinations(sets : [[T]]) : [[T]] {
  * Convenience test method for {@link MigrationDistanceComputer#compute}.
  */
 export public function d(
-	values : [any], 
+	values : Array<any>, 
 	parameterTypeInfo : [any] | [type{N4Object}]) : number {
 	const computer = new MigrationDistanceComputer();
 	const argTypes = computer.computeArgumentTypes(values);
 	
 	// synthesize test candidate
-	const candidate = makeCandidate(parameterTypeInfo as  [type{N4Object} | TypeTypeRef<Object> | string]);
+	const candidate = makeCandidate(parameterTypeInfo as  Array<type{N4Object} | TypeTypeRef<Object> | string>);
 	
 	return computer.compute(argTypes, candidate);
 }
@@ -102,7 +102,7 @@ export public function makeCandidate(parameterTypes : [type{N4Object}] | [type{N
 /**
  * 
  */
-export public function migrationArguments(parameterTypes : Array<type{N4Object} | TypeTypeRef<Object> | string>) : [MigrationArgumentTypeDescription] {
+export public function migrationArguments(parameterTypes : Array<type{N4Object} | TypeTypeRef<Object> | string>) : Array<MigrationArgumentTypeDescription> {
 	return new MigrationDistanceComputer().computeMigrationArgumentTypes(
 		makeCandidate(parameterTypes));
 }

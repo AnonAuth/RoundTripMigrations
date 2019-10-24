@@ -17,9 +17,9 @@ import {MigrationControllerImpl} from "org/eclipse/n4js/n4idl/controller/Migrati
  */
 export public class Node#1 {
 	public id : int
-	public successors : [Node]
+	public successors : Array<Node>
 	
-	public constructor(id : int, successors : [Node]=) {
+	public constructor(id : int, successors : Array<Node>=) {
 		this.successors = successors || [];
 		this.id = id;
 	}
@@ -38,7 +38,7 @@ export public class Node#1 {
 
 export public class Node#2 {
 	public id : int
-	public successors : [Node] = []
+	public successors : Array<Node> = []
 }
 
 /** Migrates graph node and all its successors. */
@@ -64,7 +64,7 @@ export public class Node#2 {
  * 		<code>{id: 0, successors: {id: 1, successors: {link: 0}}}</code>
  */
 @VersionAware
-export public function <N extends ~Object with {id : int, successors: [N]}> 
+export public function <N extends ~Object with {id : int, successors: Array<N>}> 
 	nonCircularRepresentation(root : N, cache = new Set<any>()) : Object {
 	
 	cache.add(root);
@@ -118,7 +118,8 @@ export public function assertMigrationMaintainsGraph(seed : int, numberOfNodes :
  * are identical in their structure (including the node IDs).
  */
 @VersionAware
-export public function <N1 extends ~Object with {id : int, successors: [N1]}, N2 extends ~Object with {id : int, successors: [N2]}> 
+export public function <N1 extends ~Object with {id : int, successors: Array<N1>}, 
+						N2 extends ~Object with {id : int, successors: Array<N2>}> 
 	assertEqualGraph(n1 : N1, n2 : N2, message : string) {
 	
 	const graph1 = JSON.stringify(nonCircularRepresentation(n1));

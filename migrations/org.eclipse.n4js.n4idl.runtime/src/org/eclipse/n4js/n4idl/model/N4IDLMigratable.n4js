@@ -64,11 +64,11 @@ export public class N4IDLMigratable<TypeT extends Object> {
 	 * For a given list of arguments, it returns the {@link MigrationCandidate} that fit
 	 * the list of arguments (in terms of types). In case no fitting migration can be found, the returned array may be empty.
 	 */
-	public migrations(targetVersion: int) : (...any) => [MigrationCandidate] {
+	public migrations(targetVersion: int) : (...any) => Array<MigrationCandidate> {
 		const migratable : Object+ = N4TypeUtils.dynamic(this.wrappedType)[N4IDLMigratable.MIGRATIONS_STATIC_FIELD] as Object;
 		
-		return migratable[targetVersion] as (...any) => [MigrationCandidate] || 
-			function(...args : any) : [MigrationCandidate] { return []; };
+		return migratable[targetVersion] as (...any) => Array<MigrationCandidate> || 
+			function(...args : any) : Array<MigrationCandidate> { return []; };
 	}
 	
 	/**

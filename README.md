@@ -8,7 +8,7 @@ The catalog of round-trip migration scenarios can be found as an anonymized tech
 
 You need the following software to be installed on your machine:
 
-- Java 12 [Oracle Download](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html) or [OpenJDK](https://openjdk.java.net/install/))
+- Java 12 [Oracle Download](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html) or [OpenJDK](https://openjdk.java.net/install/)
 - Node.js (https://nodejs.org, version 12 recommended)
 - Yarn Package Manager (https://yarnpkg.com/lang/en/docs/install, version 1.16.0 recommended)
 

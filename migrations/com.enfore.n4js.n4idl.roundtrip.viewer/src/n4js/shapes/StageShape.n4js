@@ -138,7 +138,7 @@ export public class StageShape extends Generic {
  *
  * @returns {{x: int, y: int, width: int, height: int}}
  */
-function computeBBox(elements: [Element]): ~r~BoundingBox {
+function computeBBox(elements: Array<Element>): ~r~BoundingBox {
 	// early-exit if there are no cells
 	if (elements.length == 0) {
 		return {x: 0, y: 0, width: 0, height: 0};

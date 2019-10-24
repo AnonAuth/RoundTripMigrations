@@ -44,7 +44,7 @@ export public abstract class InstanceProxy {
 
 export public abstract class SerializedInstance {
 	public className : string
-	public fields : [SerializedField]
+	public fields : Array<SerializedField>
 	
 	public id : string
 }

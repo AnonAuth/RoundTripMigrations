@@ -19,7 +19,7 @@ export public class LoggingMigrationController extends MigrationControllerImpl {
 	/**
 	 * Log which holds a list of all resolved migrations in order of calls to #migrate.
 	 */
-	public log : [Function+] = []
+	public log : Array<Function+> = []
 	
 	/** 
 	 * Instantiates a new {@link LoggingMigrationController} which migrates instances to the 
@@ -30,7 +30,7 @@ export public class LoggingMigrationController extends MigrationControllerImpl {
 	}
 	
 	@Override
-	public <TargetType extends Object> migrateWith(migration : Function, args : [?]) : TargetType {
+	public <TargetType extends Object> migrateWith(migration : Function, args : Array<?>) : TargetType {
 		this.log.push(migration);
 		return super.migrateWith(migration, args);
 	}

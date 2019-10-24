@@ -30,9 +30,9 @@ export public class MigrationRuntimeException extends Error {
  * resolved at runtime (multiple migration candidates match the arguments equally-well in terms of migration distance).
  */
 export public class AmbiguousMigrationCallException extends MigrationRuntimeException {
-	@Final public candidates : [MigrationCandidate]
+	@Final public candidates : Array<MigrationCandidate>
 	
-	constructor(candidates : [MigrationCandidate], message : string) {
+	constructor(candidates : Array<MigrationCandidate>, message : string) {
 		super(message);
 		this.candidates = candidates;
 	}

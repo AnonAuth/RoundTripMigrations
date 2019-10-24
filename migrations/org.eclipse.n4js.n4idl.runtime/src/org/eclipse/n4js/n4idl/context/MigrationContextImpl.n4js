@@ -30,7 +30,7 @@ export public class MigrationContextImpl implements MigrationContext {
 				const results = findTraceableOutputs(value);
 				
 				for (let result of results) {
-					reversed._links.set(result, keys);
+					reversed._links.set(result, Array.from(keys));
 				}
 			}
 		}
@@ -46,7 +46,7 @@ export public class MigrationContextImpl implements MigrationContext {
 	private userData = new Map<string, any>();
 	
 	@Override
-	public getTrace(arg : Object) : [?] {
+	public getTrace(arg : Object) : Array<?> {
 		// remove potential DirtyStateProxy around the given arguments
 		const unwrapped = DirtyStateProxy.unwrap(arg)
 		return this._links.get(unwrapped) || [];

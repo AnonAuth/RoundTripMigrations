@@ -27,7 +27,7 @@ export public class Course#2 {
 	const c2 = new Course#2();
 	
 	// compute average mark of all exams
-	c2.averageMark = (c.exams.map(e => e.mark) as [number])
+	c2.averageMark = (c.exams.map(e => e.mark) as Array<number>)
 		.reduce((acc, m) => acc + m, 0) / c.exams.length;
 	
 	return c2;

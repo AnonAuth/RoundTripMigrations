@@ -92,7 +92,7 @@ export public class MigrationControllerImpl implements MigrationController {
 	 */
 	@Override
 	public <TargetType extends Object> migrateWith(migration: Function, 
-		args : [?], root : boolean = true) : TargetType {
+		args : Array<?>, root : boolean = true) : TargetType {
 		// Do not migrate if the recorded traces indicate that we have
 		// already executed a migration with this exact list of arguments
 		const recordedTrace = this.getRecordedTrace(args);
@@ -135,7 +135,7 @@ export public class MigrationControllerImpl implements MigrationController {
 	}
 	
 	@Override
-	public <TargetType extends Object> migrate(args : [?], root : boolean = true) : TargetType {
+	public <TargetType extends Object> migrate(args : Array<?>, root : boolean = true) : TargetType {
 		// obtain the corresponding migration procedure via the MigrationResolver
 		const migration : Function+ = this.migrationProvider.getMigration(args);
 		
@@ -202,7 +202,7 @@ export public class MigrationControllerImpl implements MigrationController {
 		if (valueOrProxy instanceof MigrationProxy) {
 			// attempt to resolve proxy
 			const result = this._recordedLinks.get(
-				(valueOrProxy as MigrationProxy).migrationArguments);
+				Array.from((valueOrProxy as MigrationProxy).migrationArguments));
 			
 			// fall-back to proxy if the value is not available yet
 			object[key] = result || valueOrProxy; 
@@ -226,7 +226,7 @@ export public class MigrationControllerImpl implements MigrationController {
 	/**
 	 * Returns the recorded traces of the given object {@code o}.
 	 */
-	private getRecordedTrace(migrationArgs : [?]) : Object {
+	private getRecordedTrace(migrationArgs : Array<?>) : Object {
 		return this._recordedLinks.get(migrationArgs);
 	}
 }
@@ -251,13 +251,13 @@ class SubMigrationControllerImpl implements MigrationController {
 	}
 	
 	@Override
-	public <TargetType extends Object> migrate(args : [?]) : TargetType {
+	public <TargetType extends Object> migrate(args : Array<?>) : TargetType {
 		return this.delegate.migrate(args, false);
 	}
 	
 	@Override
 	public <TargetType extends Object> migrateWith(migration: Function, 
-		args : [?], root : boolean = true) : TargetType {
+		args : Array<?>, root : boolean = true) : TargetType {
 		return this.delegate.<TargetType>migrateWith(migration, args, false);
 	}
 }

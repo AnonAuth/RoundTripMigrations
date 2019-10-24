@@ -25,6 +25,5 @@
 		"n4js-runtime": "*",
 		"com.enfore.n4js.n4idl.roundtrip": "0.0.1",
 		"svg-pan-zoom": "^3.5.3"
-
 	}
 }

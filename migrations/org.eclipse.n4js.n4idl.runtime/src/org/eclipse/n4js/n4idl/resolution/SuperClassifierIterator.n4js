@@ -49,7 +49,7 @@ export public class SuperClassifierIterator implements Iterator<SuperClassifierI
 		return {done: false, value: next};
 	}
 	
-	getSuperClassifiers(constructorObject : Object) : [type{Object}] {
+	getSuperClassifiers(constructorObject : Object) : Array<type{Object}> {
 		const n4Type = N4Type.of(constructorObject);
 		
 		if (!n4Type) {
@@ -78,9 +78,9 @@ export public class SuperClassifierIterator implements Iterator<SuperClassifierI
 	/** 
 	 * Returns the super-interface of the given interface constructor.
 	 */
-	private getSuperInterfaces(ctor : type{N4Object}) : [type{Object}] {
+	private getSuperInterfaces(ctor : type{N4Object}) : Array<type{Object}> {
 		const n4idlClassifier = N4IDLClassifier.of(ctor);
-		return n4idlClassifier != null ? n4idlClassifier.implementedInterfaces : [] as [type{Object}]
+		return n4idlClassifier != null ? n4idlClassifier.implementedInterfaces : [] as Array<type{Object}>
 	}
 }
 
@@ -107,8 +107,8 @@ export public class SuperClassifierIteratorException extends Error {
 /**
  * Spreads all given arrays into a single array.
  */
-function <T> spread(...arrays : Array<T>) : [T] { 
-	let merged : [T] = [];
+function <T> spread(...arrays : Array<T>) : Array<T> { 
+	let merged : Array<T> = [];
 	arrays.forEach(array => {
 		array.forEach(e => merged.push(e));
 	});

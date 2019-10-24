@@ -28,7 +28,7 @@ import {MigrationControllerImpl} from "org/eclipse/n4js/n4idl/controller/Migrati
  * @param migrationRuntimeException The expected {@link MigrationRuntimeException}. 
  * 	Expects {@link NoSuchMigrationException} by default. 
  */
-export public function assertMigrationFails(targetVersion : int, args : [any], 
+export public function assertMigrationFails(targetVersion : int, args : Array<any>, 
 	migrationRuntimeException : type{MigrationRuntimeException} = NoSuchMigrationException) : void {
 	
 	try {
@@ -71,7 +71,7 @@ export public function assertMigrationFails(targetVersion : int, args : [any],
  * @param targetVersion The migration target version
  * @param args The list of migration arguments
  */
-export public function assertMigrationSucceeds(targetVersion : int, args : [any]) : void {
+export public function assertMigrationSucceeds(targetVersion : int, args : Array<any>) : void {
 	try {
 		findMigration(targetVersion, args);
 	} catch (e) {
@@ -87,7 +87,7 @@ export public function assertMigrationSucceeds(targetVersion : int, args : [any]
  * @param args The migration arguments
  * @param migrations The expected list of ambiguous/conflicting migrations (function references)
  */
-export public function assertAmbiguousWith(targetVersion : int, args : [any], migrations : [Function]) : void {
+export public function assertAmbiguousWith(targetVersion : int, args : Array<any>, migrations : Array<Function>) : void {
 	// attempt to find best-matching migration (should throw ambiguous migration call exception)
 	try {
 		findMigration(targetVersion, args);
@@ -117,7 +117,7 @@ export public function assertAmbiguousWith(targetVersion : int, args : [any], mi
  * Instantiates a new {@link MigrationResolver} for the given target version
  * and resolves the migration which is applicable to the given arguments.
  */
-export public function findMigration(targetVersion : int, args : [?]) : Function {
+export public function findMigration(targetVersion : int, args : Array<?>) : Function {
 	const resolver = new MigrationResolver(targetVersion);
 	const controller = new MigrationControllerImpl(resolver);
 	
@@ -133,7 +133,7 @@ export public function findMigration(targetVersion : int, args : [?]) : Function
  * Instantiates a new {@link MigrationResolver} for the given target version
  * and returns all migrations that are applicable to the given arguments.
  */
-export public function findAllMigrations(targetVersion : int, args : [any]) : [MigrationCandidate] {
+export public function findAllMigrations(targetVersion : int, args : Array<any>) : Array<MigrationCandidate> {
 	const r = new MigrationResolver(targetVersion);
 	return Array.from(r.findAllMigrations(args));
 }

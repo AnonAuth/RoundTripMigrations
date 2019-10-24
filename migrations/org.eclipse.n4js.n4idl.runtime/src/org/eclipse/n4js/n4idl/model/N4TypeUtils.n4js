@@ -30,7 +30,7 @@ export public class N4TypeUtils {
 	/** 
 	 * Returns a user-facing string representation of the given list of arguments.
 	 */
-	public static typesToString(args : [?]) : string{
+	public static typesToString(args : Array<?>) : string{
 		return args.map(arg => N4TypeUtils.typeDescription(arg)).join(", ");
 	}
 	
