@@ -8,7 +8,7 @@ The catalog of round-trip migration scenarios can be found as an anonymized tech
 
 You need the following software to be installed on your machine:
 
-- Java 12 [Oracle Download](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html) or [OpenJDK](https://openjdk.java.net/install/)
+- Java >=12 [Oracle Download](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html) or [OpenJDK](https://openjdk.java.net/install/)
 - Node.js (https://nodejs.org, version 12 recommended)
 - Yarn Package Manager (https://yarnpkg.com/lang/en/docs/install, version 1.16.0 recommended)
 
@@ -18,6 +18,7 @@ Furthermore you need the Eclipse N4JS IDE for executing the migrations. We teste
 
 Download the IDE for your OS, extract the archive and run the IDE.
 
+> Note: You may also use a current nightly build of the N4JS IDE, however, Eclipse N4JS is currently experiencing some issues with their IDE builds on macOS.
 
 ### Additional Tool Support
 
