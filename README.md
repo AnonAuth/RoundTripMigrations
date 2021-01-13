@@ -1,4 +1,4 @@
-# Supplementary Material for the paper Managing Data Model Evolution in the Context of Web APIs
+# Supplementary Material for the paper A Transformational Approach to Managing Data Model Evolution of Web Services
 
 The catalog of round-trip migration scenarios can be found as an anonymized technical report here:
 
