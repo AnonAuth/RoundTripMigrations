@@ -15,8 +15,8 @@
 		]
 	},
 	"dependencies": {
-		"org.eclipse.n4js.mangelhaft.assert": "0.14.10",
-		"n4js-runtime-es2015": "0.14.10",
-		"n4js-runtime": "*"
+		"org.eclipse.n4js.mangelhaft.assert": "*",
+		"n4js-runtime-es2015": "*",
+		"n4js-runtime": "0.24.29"
 	}
 }

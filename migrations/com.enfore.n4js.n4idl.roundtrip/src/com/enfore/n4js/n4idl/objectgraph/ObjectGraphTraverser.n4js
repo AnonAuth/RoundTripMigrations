@@ -21,7 +21,11 @@ import {Type} from "com/enfore/n4js/n4idl/objectgraph/Type";
 export project class ObjectGraphTraverser {
 	subGraphRegistry : Map<N4Object, int> = new Map<N4Object, int>();
 	instanceRegistry : Array<Instance> = new Array<Instance>();
-	queue : GraphiphyQueue = new GraphiphyQueue();
+	queue : GraphiphyQueue;
+	
+	constructor(queue: GraphiphyQueue) {
+	    this.queue = queue;
+	}
 	
 	/**
 	 * Processes the given object sub-graph.

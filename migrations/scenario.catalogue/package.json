@@ -15,12 +15,12 @@
 		]
 	},
 	"dependencies": {
-		"com.enfore.n4js.n4idl.roundtrip": "0.0.1",
-		"n4js-runtime": "*",
-		"org.eclipse.n4js.n4idl.runtime": "0.0.1",
-		"org.eclipse.n4js.mangelhaft": "0.14.10",
+		"com.enfore.n4js.n4idl.roundtrip": "*",
+		"n4js-runtime": "0.24.29",
+		"org.eclipse.n4js.n4idl.runtime": "*",
+		"org.eclipse.n4js.mangelhaft": "*",
 		"n4js-mangelhaft-cli": "*",
-		"org.eclipse.n4js.mangelhaft.assert": "0.14.10",
-		"n4js-runtime-es2015": "0.14.10"
+		"org.eclipse.n4js.mangelhaft.assert": "*",
+		"n4js-runtime-es2015": "*"
 	}
 }

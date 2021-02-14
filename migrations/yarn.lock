@@ -1801,7 +1801,7 @@ esm@3.2.22:
   version "3.2.22"
   resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.22.tgz#5062c2e22fee3ccfee4e8f20da768330da90d6e3"
 
-esm@~3.2.10:
+esm@3.2.25:
   version "3.2.25"
   resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
 
@@ -3298,9 +3298,10 @@ n4js-cli@0.14.10:
     n4js-runtime-node "0.14.10"
     npmlog "4.1.2"
 
-n4js-es5@0.14.0-next.20190401.1:
-  version "0.14.0-next.20190401.1"
-  resolved "https://registry.yarnpkg.com/n4js-es5/-/n4js-es5-0.14.0-next.20190401.1.tgz#6c804fd3dc88ab146454ed2898e37f23c17c5009"
+n4js-es5@0.13.5:
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/n4js-es5/-/n4js-es5-0.13.5.tgz#9c600ec3d1fa80affdc299e3016cd12140074be0"
+  integrity sha512-GEjdFREk6xoKMFCq+yXFCflWuHOg/HF8Y4BiVLw/sINrBs6pfGoyEAiPUf+eHGSaP8Fheq2WJ0wXpmA0Y81fuA==
 
 n4js-mangelhaft-cli@*:
   version "0.14.10"
@@ -3325,18 +3326,30 @@ n4js-mangelhaft-cli@*:
     org.eclipse.n4js.mangelhaft.reporter.ide "0.14.10"
     org.eclipse.n4js.mangelhaft.reporter.xunit "0.14.10"
 
-n4js-node@0.14.0-next.20190401.1:
-  version "0.14.0-next.20190401.1"
-  resolved "https://registry.yarnpkg.com/n4js-node/-/n4js-node-0.14.0-next.20190401.1.tgz#574b11c23fa21dc837880ee6f8e099e6a6364256"
-  integrity sha512-vDuSBXC2JP8ygRLDpbgQ+EaIUgQmWO1HPRNMTjxfxgvHHNeh4Zhi+ZGMXpmk4YgJTVmsCaBIgD5twDyVYFYnMA==
+n4js-node@*:
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/n4js-node/-/n4js-node-0.13.5.tgz#0acda267df86684fc89b4a51c58b9ddc38e138d0"
+  integrity sha512-PEPGT0wejdsSK79aVMZGE+Pp872yBCoQkXrw1kBJZvJgnpxz0WuK6PUDonMzFqhK0IMPPx0MURlDmPX/OYJuqg==
   dependencies:
-    esm "~3.2.10"
-    n4js-es5 "0.14.0-next.20190401.1"
+    n4js-es5 "0.13.5"
     node-fetch "~2.2.0"
+    systemjs "~0.19.40"
+
+n4js-runtime-es2015@*, n4js-runtime-es2015@0.24.29:
+  version "0.24.29"
+  resolved "https://registry.yarnpkg.com/n4js-runtime-es2015/-/n4js-runtime-es2015-0.24.29.tgz#26439f28a0f0c2efe9ed39b7f5e3ca1617f472f3"
+  integrity sha512-Sf8O7Fpc5w8kvmtBJv0UKatMZ9PR+/EBpEhGZcaDpRlcd3rvQ/zRXsaFf1oM1ud64eId+NjLT7pLNfTvQ4a2Ng==
 
 n4js-runtime-es2015@0.14.10:
   version "0.14.10"
   resolved "https://registry.yarnpkg.com/n4js-runtime-es2015/-/n4js-runtime-es2015-0.14.10.tgz#f8f5fa589f697389afeecb8ae6ed0cfeaf2f1b26"
+
+n4js-runtime-esnext@*, n4js-runtime-esnext@0.24.29:
+  version "0.24.29"
+  resolved "https://registry.yarnpkg.com/n4js-runtime-esnext/-/n4js-runtime-esnext-0.24.29.tgz#257c5d583cde3cf5e0155b684b172e1990800d69"
+  integrity sha512-eGF0AUaSmRGjUreVRpA8bRvFYPkoYfuG8eINwtV19o8MG0J8+G3jgRscopeLmmYOgNa7iJ61etKa1/ZIC6Ab8g==
+  dependencies:
+    n4js-runtime-es2015 "0.24.29"
 
 n4js-runtime-esnext@0.14.10:
   version "0.14.10"
@@ -3350,13 +3363,21 @@ n4js-runtime-fetch@0.14.10:
   dependencies:
     n4js-runtime-es2015 "0.14.10"
 
-n4js-runtime-html5@0.14.10:
-  version "0.14.10"
-  resolved "https://registry.yarnpkg.com/n4js-runtime-html5/-/n4js-runtime-html5-0.14.10.tgz#95df74137f9e01b6ca354aa205e4221389657c0f"
+n4js-runtime-fetch@0.24.29:
+  version "0.24.29"
+  resolved "https://registry.yarnpkg.com/n4js-runtime-fetch/-/n4js-runtime-fetch-0.24.29.tgz#c1f03233d6834bec756bacaa6d604f36e8f26d17"
+  integrity sha512-tX1I+1weXIH72NWua1uvZDjIjWqTaVo01s4QrFDEOWKNg6tBX+6c00QeOHtNJ0HbAsHUCi34eSdzqWbI3KU8eg==
   dependencies:
-    n4js-runtime-es2015 "0.14.10"
-    n4js-runtime-esnext "0.14.10"
-    n4js-runtime-fetch "0.14.10"
+    n4js-runtime-es2015 "0.24.29"
+
+n4js-runtime-html5@*:
+  version "0.24.29"
+  resolved "https://registry.yarnpkg.com/n4js-runtime-html5/-/n4js-runtime-html5-0.24.29.tgz#5ec177293ca614ef2c47dbd42feade9c1ce60c0c"
+  integrity sha512-QsL7a7I4gfwIzlIUuZidfqdNSYy+Tv1jDQ7gMbFz2BET6w5hrbRpHin3OdCiKtcBdQpcugb7S0369IZvFdlAMQ==
+  dependencies:
+    n4js-runtime-es2015 "0.24.29"
+    n4js-runtime-esnext "0.24.29"
+    n4js-runtime-fetch "0.24.29"
 
 n4js-runtime-node@0.14.10:
   version "0.14.10"
@@ -3365,16 +3386,38 @@ n4js-runtime-node@0.14.10:
     n4js-runtime-es2015 "0.14.10"
     n4js-runtime-esnext "0.14.10"
 
+n4js-runtime-node@0.24.29:
+  version "0.24.29"
+  resolved "https://registry.yarnpkg.com/n4js-runtime-node/-/n4js-runtime-node-0.24.29.tgz#ca55d9215fa1ea5b7107da41f82d1698e6df8019"
+  integrity sha512-H9N6eydUDOlb6fJ4YX4UlepkR6Y9yR1K3cK5spCoJ2FZ/fL67ywCAFJdh8suCpfEevqEejhhpg1Nn+IcoD1w+Q==
+  dependencies:
+    n4js-runtime-es2015 "0.24.29"
+    n4js-runtime-esnext "0.24.29"
+
 n4js-runtime-v8@0.14.10:
   version "0.14.10"
   resolved "https://registry.yarnpkg.com/n4js-runtime-v8/-/n4js-runtime-v8-0.14.10.tgz#6713017de529694cc28ec7b81c9785fae7b74fae"
 
-n4js-runtime@*, n4js-runtime@0.14.10:
+n4js-runtime-v8@0.24.29:
+  version "0.24.29"
+  resolved "https://registry.yarnpkg.com/n4js-runtime-v8/-/n4js-runtime-v8-0.24.29.tgz#f6ddfd3fc6a2cf90536305cec2fab634a1c44462"
+  integrity sha512-KR5rLMyPNf5RK/NZzM1qFXzF6p55N6gs93QI7eyR/JaUCQjBf+f367ziKQkgJj9zKNc6OjRi9kq9v0WQU5i5/g==
+
+n4js-runtime@0.14.10:
   version "0.14.10"
   resolved "https://registry.yarnpkg.com/n4js-runtime/-/n4js-runtime-0.14.10.tgz#5d1965a7deee73af8bc6d1dce59c242fe6f948f3"
   dependencies:
     esm "3.2.22"
     n4js-runtime-es2015 "0.14.10"
+
+n4js-runtime@0.24.29:
+  version "0.24.29"
+  resolved "https://registry.yarnpkg.com/n4js-runtime/-/n4js-runtime-0.24.29.tgz#81736072fafa5ea5f796fc0a6438ff41ab1df0fa"
+  integrity sha512-TNn3G3TobEzNecf2wScguwtgGZ/6ZmliENTLceFuCKQCaQ8hMenaqSAthwNp3F0mr4g/EGgwp8b66wMo6pmNhg==
+  dependencies:
+    esm "3.2.25"
+    n4js-runtime-es2015 "0.24.29"
+    n4js-runtime-esnext "0.24.29"
 
 nan@^2.12.1:
   version "2.14.0"
@@ -3599,6 +3642,15 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
+org.eclipse.n4js.mangelhaft.assert@*, org.eclipse.n4js.mangelhaft.assert@0.24.29:
+  version "0.24.29"
+  resolved "https://registry.yarnpkg.com/org.eclipse.n4js.mangelhaft.assert/-/org.eclipse.n4js.mangelhaft.assert-0.24.29.tgz#e601df37a190bbacd9ae8e3bd537a39196952440"
+  integrity sha512-vWAidSnLG52I1c2AiqV96Q0qtqSqbCwLCwcrpoiFMdL/XBGh73kktVV/UPZuWqWTUls8dgETdIkRlnY7vDfNlg==
+  dependencies:
+    n4js-runtime "0.24.29"
+    n4js-runtime-es2015 "0.24.29"
+    n4js-runtime-v8 "0.24.29"
+
 org.eclipse.n4js.mangelhaft.assert@0.14.10:
   version "0.14.10"
   resolved "https://registry.yarnpkg.com/org.eclipse.n4js.mangelhaft.assert/-/org.eclipse.n4js.mangelhaft.assert-0.14.10.tgz#db893a54e6bb1a7ab2ace088a096dae4fa2bbdc9"
@@ -3636,6 +3688,19 @@ org.eclipse.n4js.mangelhaft.reporter.xunit@0.14.10:
     n4js-runtime-node "0.14.10"
     org.eclipse.n4js.mangelhaft "0.14.10"
     xmlbuilder "^10.0.0"
+
+org.eclipse.n4js.mangelhaft@*:
+  version "0.24.29"
+  resolved "https://registry.yarnpkg.com/org.eclipse.n4js.mangelhaft/-/org.eclipse.n4js.mangelhaft-0.24.29.tgz#ca11a6f25a210327eab27ca87fce6d93ecda1546"
+  integrity sha512-z0epCVfnaO9f3J6AcBIEBA9QFgBPtdMheGRFJzvX4SZAwa90Kwjeba8+JKK913cvV5KQi7b0GFpxT6yxojSnpw==
+  dependencies:
+    n4js-runtime "0.24.29"
+    n4js-runtime-es2015 "0.24.29"
+    n4js-runtime-esnext "0.24.29"
+    n4js-runtime-fetch "0.24.29"
+    n4js-runtime-node "0.24.29"
+    n4js-runtime-v8 "0.24.29"
+    org.eclipse.n4js.mangelhaft.assert "0.24.29"
 
 org.eclipse.n4js.mangelhaft@0.14.10:
   version "0.14.10"
@@ -4650,6 +4715,13 @@ symbol-observable@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
 
+systemjs@~0.19.40:
+  version "0.19.47"
+  resolved "https://registry.yarnpkg.com/systemjs/-/systemjs-0.19.47.tgz#c8c93937180f3f5481c769cd2720763fb4a31c6f"
+  integrity sha1-yMk5NxgPP1SBx2nNJyB2P7SjHG8=
+  dependencies:
+    when "^3.7.5"
+
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
@@ -5037,6 +5109,11 @@ webpack@^4.2.0:
     terser-webpack-plugin "^1.1.0"
     watchpack "^1.5.0"
     webpack-sources "^1.3.0"
+
+when@^3.7.5:
+  version "3.7.8"
+  resolved "https://registry.yarnpkg.com/when/-/when-3.7.8.tgz#c7130b6a7ea04693e842cdc9e7a1f2aa39a39f82"
+  integrity sha1-xxMLan6gRpPoQs3J56Hyqjmjn4I=
 
 which-module@^2.0.0:
   version "2.0.0"

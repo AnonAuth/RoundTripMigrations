@@ -10,7 +10,7 @@
  */
 import {Field} from "com/enfore/n4js/n4idl/objectgraph/Field";
 import {Instance} from "com/enfore/n4js/n4idl/objectgraph/Instance";
-import {ObjectGraphTraverser} from "com/enfore/n4js/n4idl/objectgraph/ObjectGraphTraverser";
+import {ObjectGraphTraverser, GraphiphyQueue} from "com/enfore/n4js/n4idl/objectgraph/ObjectGraphTraverser";
 /**
  * Meta-representation of an N4JS object graph. 
  * 
@@ -23,7 +23,7 @@ export public class ObjectGraph {
 	 * Returns an ObjectGraph with the given object as root.
 	 */
 	public static graphiphy(object : N4Object) : ~Object with {graph: ObjectGraph, subGraphRegistry: Map<N4Object, int>} {
-		let factory = new ObjectGraphTraverser();
+		let factory = new ObjectGraphTraverser(new GraphiphyQueue());
 		// add root element to queue
 		factory.queue.push(object);
 		

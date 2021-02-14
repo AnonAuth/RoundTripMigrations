@@ -8,21 +8,22 @@
  * Contributors:
  *   Anon - Initial API and implementation
  */
+export public class SuperType#2 {
+    public superField1 : string
+    public superField2 : string
+    
+    constructor() {}
+}
+ 
 // @section v1
 export public class AddSuperType#1 {
 	public ownedField : string
 }
 
 // @section v2
-export public class AddSuperType#2 
-	extends SuperType {
+export public class AddSuperType#2 extends SuperType {
 	
 	public ownedField : string
-}
-
-export public class SuperType#2 {
-	public superField1 : string
-	public superField2 : string
 }
 
 // @section migrations
@@ -30,7 +31,7 @@ export public class SuperType#2 {
 export function migrate(o1 : AddSuperType#1) : AddSuperType#2 {
 	// obtain previous revision
 	const previousRevision = context.getTrace(o1)[0] as AddSuperType#2
-		|| {} as AddSuperType#2;
+		|| new AddSuperType#2();
 
 	let o2 = new AddSuperType#2();
 
