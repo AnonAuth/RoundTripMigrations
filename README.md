@@ -14,31 +14,11 @@ You need the following software to be installed on your machine:
 
 Furthermore you need the Eclipse N4JS IDE for executing the migrations. We tested the tooling with the following version:
 
-- [https://archive.eclipse.org/n4js/products/nightly/201907162301/](https://archive.eclipse.org/n4js/products/nightly/201907162301/)
+- [https://archive.eclipse.org/n4js/products/nightly/0.22.5.v20200520-2342/](https://archive.eclipse.org/n4js/products/nightly/0.22.5.v20200520-2342/)
 
 Download the IDE for your OS, extract the archive and run the IDE.
 
 > Note: You may also use a current nightly build of the N4JS IDE, however, Eclipse N4JS is currently experiencing some issues with their IDE builds on macOS.
-
-### Additional Tool Support
-
-Additionally you may install the plugins found in the folder "roundtrip-runner" on the `update-site` branch. They provide a designated runner for round-trip migration scenarios and a view for showing corresponding object diagrams. This is explained in the appendix of the thesis mentioned above.
-
-After launching the Eclipse IDE, go to Help/Install New Software.
-
-<img src="img/1_install_viewer.png" height="200pt" style="max-height: 220pt" alt="Help/Install New Software"/>
-
-Enter a new update site:
-
-```
-https://jevopi.de/updatesite/com.enfore.n4js.n4idl.roundtrip.site/
-```
-
-> Note: Make sure to uncheck 'Group items by category' to see the update site contents.
-
-Select the Round-Trip Runner and install it.
-
-<img src="img/2_select_runner_for_installation.png" height="200pt" style="max-height: 150pt" alt="Select Runner"/>
 
 ## Import Projects
 
@@ -76,23 +56,6 @@ In order to run all tests of the catalog, right-click the project “scenario.ca
 You will then see a JUnit-like view presenting test report.
 
 <img src="img/6_test_results.png" height="200pt" style="max-height: 250pt" alt="Scenario Test Results"/>
-
-### Use the Round-Trip Viewer
-
-If you installed the additional round-trip migration tooling, you can also visualise round-trip migrations. In order to view the object graph including the traces and migrations, go to Window / Show View / Other and select the RoundTip Runner / Full Round Trip Object Graph.
-
-<img src="img/7_open_round_trip_viewer.png" height="200pt" style="max-height: 200pt" alt="Open RT Viewer"/>
-
-
-For any test in the `scenario.catalogue` project (i.e., an N4IDL file which file name as a suffix "Test"), use the context menu (right-click on the file) and select "Run As / Launch with N4IDL Roundtrip runner".
-
-<img src="img/8_run_with_viewer.png" height="200pt" style="max-height: 200pt" alt="Run with RT Viewer"/>
-
-You will then see the object graph in the viewer.
-
-<img src="img/9_view_graph.png" height="200pt" style="max-height: 200pt" alt="View Graph"/>
-
-> For a better viewing experience, try re-arranging graph elements by dragging or adjust the viewport by panning and zooming using the mouse wheel.
 
 # License
 
